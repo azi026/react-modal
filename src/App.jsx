@@ -4,16 +4,15 @@ import Modal from './component/Modal';
 
 function App() {
     const [modal,setModal]=useState(false);
-    const toggle= () => {
-        setModal(!modal)
-    };
+    const toggle= () => { setModal(!modal)};
     return (      
-          <div>
-           <button 
-           onClick={()=>toggle()}> 
+          <div  className='App'>
+           <button onClick={()=>toggle()} className='ClickMe'> 
            Modal
            </button>
-           <Modal  show={modal}/>
+           <Modal  show={modal} close={toggle} title="Dinamik title">
+                This is Modal Dinamik content
+            </Modal>
         </div>
     );
 }
